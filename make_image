@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo 'Starting...'
+
+IMAGE=images/package.zip
+ZIPIMAGE=flashable
+OUTPUT=packages
+
+rm -r -d $ZIPIMAGE/firmware-update 2> /dev/null
+
+unzip $IMAGE 'firmware-update/*' -d $ZIPIMAGE
+
+cd $ZIPIMAGE
+zip -r9 ../$OUTPUT/FirmwarePackage-`date +%d%m%y*%H:%M`.zip *
+cd ..
+
+echo 'Done!'

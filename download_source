@@ -1,0 +1,13 @@
+#!/bin/bash
+
+DIR=images
+
+echo 'Starting download...'
+
+wget -O $DIR/package.zip $1 --show-progress
+
+echo 'Done!'
+
+if [[ $2 == 'm' ]]; then
+	./make_image
+fi
