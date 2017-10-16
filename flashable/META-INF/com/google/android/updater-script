@@ -11,6 +11,7 @@ package_extract_file("firmware-update/hyp.mbn", "/dev/block/bootdevice/by-name/h
 package_extract_file("firmware-update/pmic.elf", "/dev/block/bootdevice/by-name/pmic");
 package_extract_file("firmware-update/tz.mbn", "/dev/block/bootdevice/by-name/tz");
 package_extract_file("firmware-update/emmc_appsboot.mbn", "/dev/block/bootdevice/by-name/aboot");
+show_progress(0.250000, 8);
 package_extract_file("firmware-update/lksecapp.mbn", "/dev/block/bootdevice/by-name/lksecapp");
 package_extract_file("firmware-update/devcfg.mbn", "/dev/block/bootdevice/by-name/devcfg");
 package_extract_file("firmware-update/keymaster.mbn", "/dev/block/bootdevice/by-name/keymaster");
@@ -18,12 +19,14 @@ package_extract_file("firmware-update/xbl.elf", "/dev/block/bootdevice/by-name/x
 package_extract_file("firmware-update/rpm.mbn", "/dev/block/bootdevice/by-name/rpm");
 package_extract_file("firmware-update/cmnlib64.mbn", "/dev/block/bootdevice/by-name/cmnlib64bak");
 package_extract_file("firmware-update/cmnlib.mbn", "/dev/block/bootdevice/by-name/cmnlibbak");
+show_progress(0.500000, 8);
 package_extract_file("firmware-update/hyp.mbn", "/dev/block/bootdevice/by-name/hypbak");
 package_extract_file("firmware-update/pmic.elf", "/dev/block/bootdevice/by-name/pmicbak");
 package_extract_file("firmware-update/tz.mbn", "/dev/block/bootdevice/by-name/tzbak");
 package_extract_file("firmware-update/emmc_appsboot.mbn", "/dev/block/bootdevice/by-name/abootbak");
 package_extract_file("firmware-update/lksecapp.mbn", "/dev/block/bootdevice/by-name/lksecappbak");
 package_extract_file("firmware-update/devcfg.mbn", "/dev/block/bootdevice/by-name/devcfgbak");
+show_progress(0.750000, 8);
 package_extract_file("firmware-update/keymaster.mbn", "/dev/block/bootdevice/by-name/keymasterbak");
 package_extract_file("firmware-update/xbl.elf", "/dev/block/bootdevice/by-name/xblbak");
 package_extract_file("firmware-update/rpm.mbn", "/dev/block/bootdevice/by-name/rpmbak");
