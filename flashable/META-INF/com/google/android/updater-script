@@ -1,6 +1,6 @@
-getprop("ro.product.device") == "gemini" || abort("This package is for Mi5 (aka gemini) only!");
+getprop("ro.product.device") == "gemini" || abort("E3004: Only for \"gemini\" devices; Not suitable for \"" + getprop("ro.product.device") + "\".");
 
-ui_print("Flashing firmware package v7.9.22");
+ui_print("Flashing firmware package v7.10.12");
 ui_print("Patching firmware images...");
 
 show_progress(0.100000, 8);
@@ -35,9 +35,7 @@ package_extract_file("firmware-update/NON-HLOS.bin", "/dev/block/bootdevice/by-n
 package_extract_file("firmware-update/logo.img", "/dev/block/bootdevice/by-name/logo");
 package_extract_file("firmware-update/adspso.bin", "/dev/block/bootdevice/by-name/dsp");
 package_extract_file("firmware-update/BTFM.bin", "/dev/block/bootdevice/by-name/bluetooth");
-
-set_progress(1.000000);
-
 ui_print("All things done!");
 ui_print("Thanks for choosing my work");
 ui_print("Firmware updater by @xNombre");
+set_progress(1.000000);
