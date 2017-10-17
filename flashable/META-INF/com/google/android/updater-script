@@ -1,6 +1,6 @@
-getprop("ro.product.device") == "gemini" || abort("This package is for Mi5 (aka gemini) only!");
+getprop("ro.product.device") == "gemini" || abort("E3004: Only for \"gemini\" devices; Not suitable for \"" + getprop("ro.product.device") + "\".");
 
-ui_print("Flashing firmware package v7.9.22");
+ui_print("Flashing firmware package v7.10.12");
 ui_print("Patching firmware images...");
 
 show_progress(0.100000, 8);
@@ -11,6 +11,7 @@ package_extract_file("firmware-update/hyp.mbn", "/dev/block/bootdevice/by-name/h
 package_extract_file("firmware-update/pmic.elf", "/dev/block/bootdevice/by-name/pmic");
 package_extract_file("firmware-update/tz.mbn", "/dev/block/bootdevice/by-name/tz");
 package_extract_file("firmware-update/emmc_appsboot.mbn", "/dev/block/bootdevice/by-name/aboot");
+show_progress(0.250000, 8);
 package_extract_file("firmware-update/lksecapp.mbn", "/dev/block/bootdevice/by-name/lksecapp");
 package_extract_file("firmware-update/devcfg.mbn", "/dev/block/bootdevice/by-name/devcfg");
 package_extract_file("firmware-update/keymaster.mbn", "/dev/block/bootdevice/by-name/keymaster");
@@ -18,12 +19,14 @@ package_extract_file("firmware-update/xbl.elf", "/dev/block/bootdevice/by-name/x
 package_extract_file("firmware-update/rpm.mbn", "/dev/block/bootdevice/by-name/rpm");
 package_extract_file("firmware-update/cmnlib64.mbn", "/dev/block/bootdevice/by-name/cmnlib64bak");
 package_extract_file("firmware-update/cmnlib.mbn", "/dev/block/bootdevice/by-name/cmnlibbak");
+show_progress(0.500000, 8);
 package_extract_file("firmware-update/hyp.mbn", "/dev/block/bootdevice/by-name/hypbak");
 package_extract_file("firmware-update/pmic.elf", "/dev/block/bootdevice/by-name/pmicbak");
 package_extract_file("firmware-update/tz.mbn", "/dev/block/bootdevice/by-name/tzbak");
 package_extract_file("firmware-update/emmc_appsboot.mbn", "/dev/block/bootdevice/by-name/abootbak");
 package_extract_file("firmware-update/lksecapp.mbn", "/dev/block/bootdevice/by-name/lksecappbak");
 package_extract_file("firmware-update/devcfg.mbn", "/dev/block/bootdevice/by-name/devcfgbak");
+show_progress(0.750000, 8);
 package_extract_file("firmware-update/keymaster.mbn", "/dev/block/bootdevice/by-name/keymasterbak");
 package_extract_file("firmware-update/xbl.elf", "/dev/block/bootdevice/by-name/xblbak");
 package_extract_file("firmware-update/rpm.mbn", "/dev/block/bootdevice/by-name/rpmbak");
@@ -32,9 +35,7 @@ package_extract_file("firmware-update/NON-HLOS.bin", "/dev/block/bootdevice/by-n
 package_extract_file("firmware-update/logo.img", "/dev/block/bootdevice/by-name/logo");
 package_extract_file("firmware-update/adspso.bin", "/dev/block/bootdevice/by-name/dsp");
 package_extract_file("firmware-update/BTFM.bin", "/dev/block/bootdevice/by-name/bluetooth");
-
-set_progress(1.000000);
-
 ui_print("All things done!");
 ui_print("Thanks for choosing my work");
 ui_print("Firmware updater by @xNombre");
+set_progress(1.000000);
